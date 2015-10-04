@@ -32,5 +32,7 @@ newdata3 <- gap.in[gap.in$country == "Germany",]
 summary(newdata3)
 plot(x=newdata3$year, y=newdata1$gdpPercap,main="Germany",col.main="red", xlab="Year", ylab="GDP")
 #png(Germany.png)
+
+hist(gap.in$life)
 ```
 
