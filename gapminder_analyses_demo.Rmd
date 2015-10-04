@@ -34,5 +34,7 @@ plot(x=newdata3$year, y=newdata1$gdpPercap,main="Germany",col.main="red", xlab="
 #png(Germany.png)
 
 hist(gap.in$life)
+
+hist(gap.in$life, breaks=60, main="Breaks 60")
 ```
 
