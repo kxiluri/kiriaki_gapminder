@@ -13,11 +13,24 @@ library(dplyr)
 
 ```{r read-in-data}
 gap.in <- read.table("output/combined_gapMinder.tsv", sep = "\t", header = TRUE)
-   gap.in %>%
-  select(year,pop,country,continent) %>%
-  filter(year == 2002) %>%
-  group_by(continent) %>%
-  summarise(mean = mean(pop))
-  
+#   gap.in %>%
+#  select(year,pop,country,continent) %>%
+#  filter(year == 2002) %>%
+#  group_by(continent) %>%
+#  summarise(mean = mean(pop))
+#   plot
+newdata1 <- gap.in[gap.in$country == "Greece",] 
+plot(x=newdata1$year, y=newdata1$gdpPercap,main="Greece",col.main="red", xlab="Year", ylab="GDP")
+#png("Greece.png")
+
+
+newdata2 <- gap.in[gap.in$country == "Italy",]
+plot(x=newdata2$year, y=newdata1$gdpPercap,main="Italy",col.main="blue", xlab="Year", ylab="GDP")
+#png(Italy.png)
+
+newdata3 <- gap.in[gap.in$country == "Germany",]
+summary(newdata3)
+plot(x=newdata3$year, y=newdata1$gdpPercap,main="Germany",col.main="red", xlab="Year", ylab="GDP")
+#png(Germany.png)
 ```
 
